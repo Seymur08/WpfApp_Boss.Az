@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfApp_Boss.Az.Views.VerificationCodeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_Boss.Az.Views"
+        mc:Ignorable="d"
+        Title="VerificationCodeView" Height="200" Width="400" WindowStartupLocation="CenterScreen" WindowStyle="None" Name="Window">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Testiq kodunu daxil edin" FontSize="16"/>
+            <TextBox Width="180" Height="30" FontSize="16" VerticalContentAlignment="Center" Text="{Binding ConfirmationCode,UpdateSourceTrigger=PropertyChanged}"/>
+            
+            
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" > 
+            <Button Content="Davam Et" Width="100" Height="25" Margin="15 0" Background="Yellow" FontSize="15"
+                    Command="{Binding confirmation}"  CommandParameter="{Binding ElementName=Window}"/>
+            <Button Content="Legv Et" Width="100" Height="25" Background="Yellow" FontSize="15"
+                    Command="{Binding CancelCode}" CommandParameter="{Binding ElementName=Window}"/>
+        </StackPanel>
+        <Label  Grid.Row="1" Content="Bu Prosess bir nece deqiqe ceke biler" FontSize="16"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#787474" />
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,143 @@
+﻿<Page x:Class="WpfApp_Boss.Az.Views.CVPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:WpfApp_Boss.Az.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="800"
+      Title="CVPage" Name="Page">
+
+    <Grid Background="LightGray">
+
+        <!--Ad Soyad ve AtaAdi-->
+        <WrapPanel Orientation="Vertical" HorizontalAlignment="Center" Background="LightGray" Margin="0 20">
+            <Grid>
+                <Label Content="CV Yerlasdir" HorizontalAlignment="Left" FontSize="18" FontWeight="DemiBold" Margin="10 0"/>
+                <Button Template="{DynamicResource EnterButton}" Content="Is Elani Yerlesdir" Width="160" Height="40" Margin="0 0 30 0"
+                    HorizontalAlignment="Right" Background="Yellow" FontSize="14" FontWeight="DemiBold" 
+                        Command="{Binding ElanKecmekCommand}" CommandParameter="{Binding ElementName=Page}"/>
+                
+
+            </Grid>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Margin="10 0">
+                    <Label Content="Ad" FontSize="18"/>
+                    <TextBox Width="170" Height="35" VerticalAlignment="Center" VerticalContentAlignment="Center" FontSize="16"
+                             Text="{Binding Employees.Ad ,UpdateSourceTrigger=PropertyChanged}"/>
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="10 0">
+                    <Label Content="SoyAd" FontSize="18"/>
+                    <TextBox Width="170" Height="35" VerticalAlignment="Center" VerticalContentAlignment="Center" FontSize="16"
+                             Text="{Binding Employees.Soyad ,UpdateSourceTrigger=PropertyChanged}"/>
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="10 0">
+                    <Label Content="AtaAdi" FontSize="18"/>
+                    <TextBox Width="170" Height="35" VerticalAlignment="Center" VerticalContentAlignment="Center" FontSize="16"
+                             Text="{Binding Employees.Ata_Adi ,UpdateSourceTrigger=PropertyChanged}"/>
+
+                </StackPanel>
+            </StackPanel>
+
+
+            <!--Cins ve Yas-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Cins" FontSize="18" Margin="10 0"/>
+                    <ComboBox Width="255" Height="30"   Margin="10 0" FontSize="16" ItemsSource="{Binding Vendor}" SelectedItem="{Binding Employees.Cinsi}"/>
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="30 0">
+                    <Label Content="Yas" FontSize="18"/>
+                    <ComboBox Width="255" Height="30" FontSize="16" ItemsSource="{Binding Ages}" SelectedItem="{Binding Employees.Yas}"/>
+
+
+
+                </StackPanel>
+            </StackPanel>
+
+            <!--Tehsil-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical" Margin="30 0">
+                    <Label Content="Tehsil" FontSize="18"/>
+                    <ComboBox Width="300" Height="30" FontSize="16" ItemsSource="{Binding Education}" SelectedItem="{Binding Employees.Tehsil}"/>
+
+                </StackPanel>
+            </StackPanel>
+
+
+
+            <!--Is Tecrubesi-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical" Margin="30 0">
+                    <Label Content="Is Tecrubesi" FontSize="18"/>
+                    <ComboBox Width="300" Height="30" FontSize="16" ItemsSource="{Binding Experience}" SelectedItem="{Binding Employees.Is_tecrubesi}"/>
+
+                </StackPanel>
+            </StackPanel>
+
+            <!--Kategoriya-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical" Margin="30 0">
+                    <Label Content="Kategoriya" FontSize="18"/>
+                    <ComboBox Width="300" Height="30" FontSize="16" ItemsSource="{Binding Category}" SelectedItem="{Binding Employees.Kategoriya}"/>
+
+                </StackPanel>
+            </StackPanel>
+
+            <!--Seher-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical" Margin="30 0">
+                    <Label Content="Seher" FontSize="18"/>
+                    <ComboBox Width="300" Height="30" FontSize="16" ItemsSource="{Binding Citis}" SelectedItem="{Binding Employees.Seher}"/>
+
+                </StackPanel>
+            </StackPanel>
+
+            <!--Maas-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical" Margin="30 0">
+                    <Label Content="Maas" FontSize="18"/>
+                    <ComboBox Width="300" Height="30" FontSize="16" ItemsSource="{Binding Salary}" SelectedItem="{Binding Employees.Maas}"/>
+
+                </StackPanel>
+            </StackPanel>
+            <!--Email-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical" Margin="30 0">
+                    <Label Content="Email" FontSize="18"/>
+                    <TextBox Width="300" Height="30" FontSize="16" Text="{Binding Employees.Email ,UpdateSourceTrigger=PropertyChanged}"/>
+
+                </StackPanel>
+            </StackPanel>
+
+            <!--Telefon-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                <StackPanel Orientation="Vertical" >
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Telefon" FontSize="18" Margin="0 0 35 0" />
+                        <Label Content="Nomreni Bosluk ile daxil edin" FontSize="14" 
+                           Foreground="#7a7d7b" VerticalAlignment="Bottom"/>
+                    </StackPanel>
+
+                    <TextBox Width="300" Height="30" FontSize="16" Text="{Binding Employees.Telefon ,UpdateSourceTrigger=PropertyChanged}"/>
+
+                </StackPanel>
+            </StackPanel>
+
+
+            <!--Yerlesdir-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20">
+                <StackPanel Orientation="Vertical" Margin="30 0">
+                    <Button Content="Yerlesdir" Template="{DynamicResource EnterButton}" Width="130"
+                            Height="40" FontSize="18" FontWeight="DemiBold" Background="Yellow"
+                            Command="{Binding CvYerlestirCommand}"/>
+                </StackPanel>
+            </StackPanel>
+
+        </WrapPanel>
+    </Grid>
+
+</Page>

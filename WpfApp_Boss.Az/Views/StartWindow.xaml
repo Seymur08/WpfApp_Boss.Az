@@ -1,0 +1,276 @@
+﻿<NavigationWindow x:Class="WpfApp_Boss.Az.Views.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_Boss.Az.Views"
+        mc:Ignorable="d"
+        Title="StartWindow" Height="950" Width="950" MinHeight="650" MinWidth="950"  WindowState="Maximized">
+    <NavigationWindow.Content>
+        <ScrollViewer >
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4.8*"/>
+                    <RowDefinition Height="10*"/>
+
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="1.5*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="9*"/>
+
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" Background="Gray">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                    </Grid>
+
+                    <Grid Grid.Row="1" Background="#fad105" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="1" VerticalAlignment="Top">
+                            <StackPanel Orientation="Horizontal">
+                                <Label Grid.Column="1" Content="boss.az" VerticalAlignment="Center" FontWeight="Bold" FontSize="55"/>
+
+                                <Button Template="{StaticResource ElanButton}" Content="is elanlari" Height="45"  
+                                         HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="#d6b71e"
+                                         FontWeight="Bold" Margin="30 0" 
+                                         Command="{Binding IsElanLariCommand}" CommandParameter="{Binding ElementName=MyFrame}"/>
+
+                                <Button Template="{StaticResource ElanButton}" Content="is axtaranlar" Height="45"  
+                                        HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="#d6b71e" 
+                                        FontWeight="Bold" Name="IsAxtarBtn"
+                                        Command="{Binding IsAxtaranlarCommand}"  CommandParameter="{Binding ElementName=MyFrame}"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 30 0" >
+                                <Label Grid.Column="1" Content="Haqqizda" FontSize="20" FontWeight="DemiBold"
+                                        VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0"/>
+
+                                <Button Template="{DynamicResource EnterButton}" Grid.Column="1" Width="120" Height="40"
+                                        Content="Elan Yerlesdir" HorizontalAlignment="Right" 
+                                        Background="Yellow" FontSize="14" FontWeight="DemiBold" 
+                                        Command="{Binding ElanYerlesdirCommand}" CommandParameter="{Binding ElementName=MyFrame}"/>
+
+                            </StackPanel>
+                        </Grid>
+
+                    </Grid>
+
+                    <Grid Grid.Row="2" Background="#d6b71e" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="4*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" Name="MyGrid">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.8*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.8*"/>
+                            </Grid.ColumnDefinitions>
+
+
+                            <Grid Grid.Column="1" VerticalAlignment="Center"  >
+
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="24" Width="45" HorizontalContentAlignment="Right" 
+                                FontSize="16" FontWeight="Bold" Foreground="#3d3d3b"/>
+
+                                        <Button Template="{StaticResource KategoyiyaButton}" Content="Maliyye" Height="20"
+                                                HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold"
+                                                Command="{Binding MaliyyeCommand}" CommandParameter="{Binding ElementName=MyGrid}"
+                                                Background="{Binding ButtonBackground}"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="55" Width="45" HorizontalContentAlignment="Right"
+                                                FontSize="16" FontWeight="Bold" Foreground="#3d3d3b"/>
+                                        <Button Template="{StaticResource KategoyiyaButton}" Content="Marketinq" Height="20"
+                                                HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                FontWeight="DemiBold" Command="{Binding MarketinqCommand}" CommandParameter="{Binding ElementName=MyGrid}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="28" Width="45" HorizontalContentAlignment="Right"
+                                                FontSize="16" FontWeight="Bold" Foreground="#3d3d3b"/>
+                                        <Button Template="{StaticResource KategoyiyaButton}" Content="İnformasiya texnologiyaları" Height="20"
+                                                HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold" 
+                                                Command="{Binding InformasiyaCommand}" CommandParameter="{Binding ElementName=MyGrid}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="119" Width="45" HorizontalContentAlignment="Right" FontSize="16" 
+                                                FontWeight="Bold" Foreground="#3d3d3b"/>
+                                        <Button Template="{StaticResource KategoyiyaButton}" Content="İnzibati" Height="20"
+                                                HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold" 
+                                                Command="{Binding InzibatiCommand}" CommandParameter="{Binding ElementName=MyGrid}"/>
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </Grid>
+
+
+                            <Grid Grid.Column="2" VerticalAlignment="Center" >
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="41" Width="45" HorizontalContentAlignment="Right" 
+                                                FontSize="16" FontWeight="Bold" Foreground="#3d3d3b"/>
+                                        <Button Template="{StaticResource KategoyiyaButton}"   Content="Satış" Height="20"
+                                                HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold" 
+                                                Command="{Binding SatısCommand}" CommandParameter="{Binding ElementName=MyGrid}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="88" Width="45" HorizontalContentAlignment="Right"
+                                                FontSize="16" FontWeight="Bold" Foreground="#3d3d3b"/>
+                                        <Button Template="{StaticResource KategoyiyaButton}" Content="Dizayn" Height="20"
+                                                HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold" 
+                                                Command="{Binding DizaynCommand}" CommandParameter="{Binding ElementName=MyGrid}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="5" Width="45" HorizontalContentAlignment="Right"  FontSize="16" FontWeight="Bold" 
+                                                Foreground="#3d3d3b"/>
+                                        <Button Template="{StaticResource KategoyiyaButton}" Content="Hüquqşünaslıq" Height="20"
+                                                HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold" 
+                                                Command="{Binding HuquqsunaslıqCommand}" CommandParameter="{Binding ElementName=MyGrid}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="14" Width="45" HorizontalContentAlignment="Right" FontSize="16" 
+                                                FontWeight="Bold" Foreground="#3d3d3b"/>
+                                        <Button Template="{StaticResource KategoyiyaButton}" Content="Təhsil və elm" Height="20"
+                                                HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold"
+                                                Command="{Binding TehsilCommand}" CommandParameter="{Binding ElementName=MyGrid}"/>
+                                    </StackPanel>
+
+
+                                </StackPanel>
+                            </Grid>
+
+
+                            <Grid Grid.Column="3" VerticalAlignment="Center" >
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="24" Width="45" HorizontalContentAlignment="Right" 
+                                                FontSize="16" FontWeight="Bold" Foreground="#3d3d3b"/>
+                                        <Button Template="{StaticResource KategoyiyaButton}" Content="Senayi ve kent teserufati" Height="20"
+                                                HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold" 
+                                                Command="{Binding SenayiCommand}" CommandParameter="{Binding ElementName=MyFrame}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="55" Width="45" HorizontalContentAlignment="Right"
+                                                FontSize="16" FontWeight="Bold" Foreground="#3d3d3b"/>
+                                        <Button Template="{StaticResource KategoyiyaButton}" Content="Xidmet" Height="20"
+                                                HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold" 
+                                                Command="{Binding XidmetCommand}" CommandParameter="{Binding ElementName=MyFrame}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="28" Width="45" HorizontalContentAlignment="Right"
+                                                FontSize="16" FontWeight="Bold" Foreground="#3d3d3b"/>
+                                        <Button Template="{StaticResource KategoyiyaButton}" Content="Tibb ve Ezzacilik" Height="20"
+                                                HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold"
+                                                Command="{Binding TibbCommand}" CommandParameter="{Binding ElementName=MyFrame}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="119" Width="45" HorizontalContentAlignment="Right" FontSize="16" 
+                                                FontWeight="Bold" Foreground="#3d3d3b"/>
+                                        <Button Template="{StaticResource KategoyiyaButton}" Content="Muxtelif" Height="20"
+                                                HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold"
+                                                Command="{Binding MuxtelifCommand}" CommandParameter="{Binding ElementName=MyFrame}"/>
+                                    </StackPanel>
+
+
+                                </StackPanel>
+                            </Grid>
+
+                        </Grid>
+
+                        <Grid Grid.Row="1" Background="#fad105" Height="40">
+
+                            <StackPanel Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
+                                <Image Source="/Images/Search.png" Width="16"/>
+                                <Grid Width="150">
+                                    <ToggleButton x:Name="toggleButton" Content="Show Dropdown" VerticalAlignment="Top"
+                                              HorizontalAlignment="Left" Margin="10"/>
+                                    <Popup IsOpen="{Binding ElementName=toggleButton, Path=IsChecked, Mode=TwoWay}"
+                                       PlacementTarget="{Binding ElementName=toggleButton}" StaysOpen="False"
+                                           Placement="Top">
+                                        <Grid Width="400" Height="200" Background="#fad105">
+                                            <StackPanel HorizontalAlignment="Center">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Kategoriya:" Width="120" FontSize="18"/>
+                                                    <ComboBox ItemsSource="{Binding Category}" Height="30"
+                                                              HorizontalAlignment="Right" Width="220"
+                                                              FontSize="14" SelectedItem="{Binding Kategoriya, UpdateSourceTrigger=PropertyChanged}"/>
+                                                </StackPanel>
+                                                
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Maas min:" Width="120" FontSize="18"/>
+                                                    <ComboBox ItemsSource="{Binding Salary}" Height="30"
+                                                              HorizontalAlignment="Right" Width="220"
+                                                              FontSize="14" SelectedItem="{Binding Maas_min, UpdateSourceTrigger=PropertyChanged}"/>
+                                                </StackPanel>
+                                                
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Maas max:" Width="120" FontSize="18"/>
+                                                    <ComboBox ItemsSource="{Binding Salary}" Height="30"
+                                                              HorizontalAlignment="Right" Width="220"
+                                                              FontSize="14" SelectedItem="{Binding Maas_max, UpdateSourceTrigger=PropertyChanged}"/>
+                                                </StackPanel>
+                                                <Button Width="100" Height="25" Margin="0 30" Content="Axtar"
+                                                        Command="{Binding AxtarCommand}"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </Popup>
+                                </Grid>
+
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="1" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3.5*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Column="1" Source="StartMainPage.xaml" Name="MyFrame"/>
+
+                    <!--Reklamlar-->
+
+                    <Grid Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top"  Margin="0 120">
+
+                        <MediaElement Source="C:\Users\Elektrofix.az\source\C# Codes\WpfApp_Boss.AzProject\WpfApp_Boss.Az\Videos\Fanta_Reklam.mp4" 
+                               IsMuted="True" Stretch="Uniform" LoadedBehavior="Play" />
+
+                    </Grid>
+
+                    <Grid Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 120">
+
+                        <MediaElement Source="C:\Users\Elektrofix.az\source\C# Codes\WpfApp_Boss.AzProject\WpfApp_Boss.Az\Videos\Coca-Cola.mp4" LoadedBehavior="Play"
+                              IsMuted="True" Stretch="Uniform" />
+
+                    </Grid>
+
+                </Grid>
+            </Grid>
+
+        </ScrollViewer>
+    </NavigationWindow.Content>
+
+
+
+</NavigationWindow>
