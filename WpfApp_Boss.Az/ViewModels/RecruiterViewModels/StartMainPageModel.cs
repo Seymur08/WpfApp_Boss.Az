@@ -129,6 +129,7 @@ public class StartMainPageModel : BasePropertyChanged
 			IsElaniYerlesdirPage page = new IsElaniYerlesdirPage();
 			frame.Content = page;
 			
+			
 		}
 		
 	}

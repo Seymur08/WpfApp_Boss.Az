@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using WpfApp_Boss.Az.Commands;
@@ -43,6 +44,8 @@ public class IsElaniYerlesdirPageModel : BasePropertyChanged
 
 	
 	public ICommand? DavamEtCommand { get; set; }
+		
+	public ICommand? CvKecmekCommand { get; set; }
 	public ICommand? IsElanYerlastircommand { get; set; }
 
 	public IsElaniYerlesdirPageModel()
@@ -50,6 +53,7 @@ public class IsElaniYerlesdirPageModel : BasePropertyChanged
 		NewRecruiter = new Recruiter();
 		DavamEtCommand = new RelayCommand(DavamEtCommandOkey, IsDavamEtCommand);
 		IsElanYerlastircommand = new RelayCommand(Checkokey, iSCheck);
+		CvKecmekCommand = new RelayCommand(CvKecmakOkay);
 
 		CtreateAge();
 		CtreateSalary();
@@ -58,6 +62,17 @@ public class IsElaniYerlesdirPageModel : BasePropertyChanged
 		CreateEducation();
 		CreateCategory();
 
+	}
+
+	public void CvKecmakOkay(object? obj)
+	{
+		
+		Page? page = obj as Page;
+
+		if( page != null )
+		{
+			page.NavigationService?.Navigate(new CVPage());
+		}
 	}
 
 	public bool IsDavamEtCommand(object? obj)

@@ -15,5 +15,5 @@ namespace WpfApp_Boss.Az.Views
 
 		}
 
-	}
+    }
 }

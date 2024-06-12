@@ -167,6 +167,7 @@ public class CVPageViewModel: BasePropertyChanged
 		if(page != null)
 		{ 
 			page.NavigationService?.Navigate(new IsElaniYerlesdirPage());
+			
 		}
 
 	}
